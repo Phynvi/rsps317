@@ -1,5 +1,7 @@
 package com.bclaus.rsps.server.vd.player;
 
+import org.omicron.jagex.runescape.CollisionMap;
+
 import com.bclaus.rsps.server.Server;
 import com.bclaus.rsps.server.util.DisplayName;
 import com.bclaus.rsps.server.vd.content.DoubleExperience;

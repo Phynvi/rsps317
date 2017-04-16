@@ -16,8 +16,6 @@ import java.util.stream.StreamSupport;
 import com.bclaus.rsps.server.vd.player.Player;
 import com.bclaus.rsps.server.vd.items.Item;
 
-import com.google.common.base.Preconditions;
-
 /**
  * The container that represents a collection of items.
  * 
@@ -483,7 +481,7 @@ public class ItemContainer implements Iterable<Item> {
      *            to or lesser than the container.
      */
     public final void setItems(Item[] items) {
-        Preconditions.checkArgument(items.length <= capacity);
+        assert(items.length <= capacity);
         clear();
         for (int i = 0; i < items.length; i++)
             this.items[i] = items[i] == null ? null : items[i].clone();

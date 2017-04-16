@@ -19,7 +19,6 @@ import com.bclaus.rsps.server.vd.npc.NPCSlayerDeathTracker;
 import com.bclaus.rsps.server.vd.npc.pets.Pet;
 import com.bclaus.rsps.server.vd.player.account_type.Account;
 import com.bclaus.rsps.server.vd.player.account_type.AccountType;
-import com.google.common.collect.Iterables;
 
 import com.bclaus.rsps.server.Constants;
 import com.bclaus.rsps.server.vd.World;
@@ -191,7 +190,7 @@ public class PlayerSave {
 									List<ClueScroll> list = new ArrayList<>();
 									for (int i = 0; i < values.length; i++)
 										list.add(ClueScroll.valueOf(values[i]));
-									p.clueContainer = new ClueScrollContainer(p, Iterables.toArray(list, ClueScroll.class));
+									p.clueContainer = new ClueScrollContainer(p, (ClueScroll[])list.toArray());
 								}
 							} catch (IllegalArgumentException e) {
 								p.clueContainer = null;

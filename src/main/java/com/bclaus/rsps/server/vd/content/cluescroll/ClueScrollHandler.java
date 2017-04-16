@@ -16,8 +16,6 @@ import com.bclaus.rsps.server.vd.npc.NPC;
 import com.bclaus.rsps.server.util.Chance;
 import com.bclaus.rsps.server.util.Misc;
 
-import com.google.common.collect.Iterables;
-
 /**
  * @author lare96 <http://github.com/lare96>
  */
@@ -74,7 +72,7 @@ public final class ClueScrollHandler {
 			}
 		}
 
-		return Iterables.toArray(items, Item.class);
+		return (Item[]) items.toArray();
 	}
 
 	public static boolean npcDrop(Player player, NPC npc) {
@@ -123,6 +121,6 @@ public final class ClueScrollHandler {
 		amount++;
 		for (int i = 0; i < amount; i++)
 			stages.add(Misc.randomElement(ClueScroll.values()));
-		return Iterables.toArray(stages, ClueScroll.class);
+		return (ClueScroll[]) stages.toArray();
 	}
 }

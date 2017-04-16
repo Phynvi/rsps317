@@ -18,7 +18,6 @@ import com.bclaus.rsps.server.vd.content.cluescroll.ClueDifficulty;
 import com.bclaus.rsps.server.vd.content.punishment.PunishmentManager;
 import com.bclaus.rsps.server.vd.content.teleport.TeleportExecutor;
 import com.bclaus.rsps.server.vd.items.ItemList;
-import com.motivoters.motivote.service.MotivoteRS;
 
 import com.bclaus.rsps.server.Connection;
 import com.bclaus.rsps.server.Constants;
@@ -47,8 +46,6 @@ import com.bclaus.rsps.server.util.Misc;
  * 
  */
 public class Commands implements PacketType {
-	private final static MotivoteRS motivote = new MotivoteRS("DemonRsps", "50cb867ac2ede59464779190bf0638c7");
-
 	private static boolean eventStarted;
 
 	@Override
@@ -258,8 +255,9 @@ public class Commands implements PacketType {
 			String auth = playerCommand.replace("redeem ", "");
 			
 			try {
-				boolean success = motivote.redeemVote(auth);
-				
+				//TODO: voting is nice, but I want to move it for now
+				//boolean success = motivote.redeemVote(auth);
+				boolean success = false;
 				if (success) {
 					c.getItems().addItem(995, 10000);
 					c.getItems().addItem(6199, 1);
